@@ -15,10 +15,10 @@ import javax.swing.JPanel;
 public class PongPanel extends JPanel implements ActionListener, KeyListener
 
 {
-	private final static Color BACKGROUND_COLOUR = Color.black;
+	private final static Color BACKGROUND_COLOUR = Color.BLUE;
 	private final static int TIMER_DELAY = 5;
 	private final static int BALL_MOVEMENT_SPEED = 2;
-	private final static int POINTS_TO_WIN = 3; // How many points to win
+	private final static int POINTS_TO_WIN = 5; // How many points to win
 	int player1Score = 0, player2Score = 0; // Will hold the current score for each player
 	Player gameWinner; // Will hold the player who has won
 	private final static int SCORE_TEXT_X = 200; // score padding horizontal
@@ -29,7 +29,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
 	private final static int WINNER_TEXT_Y = 200; // padding for winning text vertical
 	private final static int WINNER_FONT_SIZE = 70; 
 	private final static String WINNER_FONT_FAMILY = "Serif";
-	private final static String WINNER_TEXT = "WIN!";
+	private final static String WINNER_TEXT = "WINNER WINNER CHICKEN DINNER!";
 	GameState gameState = GameState.Starting;
 	Ball ball; 
 	Paddle paddle1, paddle2;
@@ -89,20 +89,20 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
 	public void keyPressed(KeyEvent event) {
 		if(event.getKeyCode() == KeyEvent.VK_W) 
 		{
-			paddle1.setyVelocity(-2);
+			paddle1.setyVelocity(-3);
 		}
 		else if(event.getKeyCode() == KeyEvent.VK_S)
 		{
-			paddle1.setyVelocity(2);
+			paddle1.setyVelocity(3);
 		}
 		
 		if(event.getKeyCode() == KeyEvent.VK_UP) 
 		{
-			paddle2.setyVelocity(-2);
+			paddle2.setyVelocity(-3);
 		}
 		else if(event.getKeyCode() == KeyEvent.VK_DOWN)
 		{
-			paddle2.setyVelocity(2);
+			paddle2.setyVelocity(3);
 		}
 	}
 
